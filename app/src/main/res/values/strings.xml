@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ALL Kotlin</string>
+    <string name="pruebas_de_endpoints">Pruebas de Endpoints</string>
+    <string name="hay_red">Hay Red?</string>
+    <string name="nativo">Nativo</string>
+    <string name="http_asinc">Http Asinc</string>
+    <string name="okhttp">OkHttp</string>
+    <string name="volley">Volley</string>
 </resources>

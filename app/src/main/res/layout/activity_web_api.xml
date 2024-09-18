@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WebApi">
+
+    <TextView
+        android:id="@+id/tvTituloWebApi"
+        android:layout_width="397dp"
+        android:layout_height="37dp"
+        android:text="@string/pruebas_de_endpoints"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <Button
+        android:id="@+id/btValRed1"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hay_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloWebApi"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <Button
+        android:id="@+id/btEndNativo"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nativo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toEndOf="@+id/btValRed1"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloWebApi"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <Button
+        android:id="@+id/btEndVolley"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volley"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toEndOf="@+id/btEndNativo"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloWebApi"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <Button
+        android:id="@+id/btEndHttpAsinc"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="105dp"
+        android:layout_height="63dp"
+        android:text="@string/http_asinc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btValRed1"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <Button
+        android:id="@+id/btEndOkHttp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="105dp"
+        android:layout_height="63dp"
+        android:text="@string/okhttp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toEndOf="@+id/btEndHttpAsinc"
+        app:layout_constraintTop_toBottomOf="@+id/btEndNativo"
+        app:layout_constraintVertical_bias="0.054" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

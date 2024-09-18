@@ -8,12 +8,56 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvTituloPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Proyecto General Kotlin"
+        android:textColor="@color/design_default_color_primary"
+        android:textColorLink="@color/design_default_color_primary_dark"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/btAPI"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="157dp"
+        android:layout_height="67dp"
+        android:text="API TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="316dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPrincipal"
+        app:srcCompat="@mipmap/img_android" />
+
+    <Button
+        android:id="@+id/btClima"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="159dp"
+        android:layout_height="64dp"
+        android:text="CLIMA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toEndOf="@+id/btAPI"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.221" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
