@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btClima.setOnClickListener {
-            intent = Intent(this, WebApi::class.java)
+            intent = Intent(this, Ciudades::class.java)
             intent.putExtra("Valor","Explorar Clima-" + LocalDate.now() )
             startActivity(intent)
         }

@@ -22,7 +22,11 @@ import java.io.InputStream
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
 import com.example.myapplication.Clases.DescargaURL
+import com.example.myapplication.Clases.Persona
+import com.example.myapplication.Clases.Personas
+import com.google.gson.Gson
 import okhttp3.OkHttpClient
+import org.json.JSONObject
 
 
 class WebApi : AppCompatActivity(), CompletadoListener {
@@ -33,6 +37,10 @@ class WebApi : AppCompatActivity(), CompletadoListener {
     lateinit var btEndVolley: Button
     lateinit var btEndHttpAsinc: Button
     lateinit var btEndOkHttp: Button
+    lateinit var btjSon: Button
+    lateinit var btgson: Button
+
+    var listaPersonas = ArrayList<Persona>()
 
     override fun descargaCompleta(resultado: String) {
         Log.d( "HttpAsinc", resultado)
@@ -54,6 +62,8 @@ class WebApi : AppCompatActivity(), CompletadoListener {
         btEndVolley=findViewById(R.id.btEndVolley)
         btEndHttpAsinc=findViewById(R.id.btEndHttpAsinc)
         btEndOkHttp=findViewById(R.id.btEndOkHttp)
+        btjSon=findViewById(R.id.btjSon)
+        btgson=findViewById(R.id.btgSon)
 
         tvTituloWebApi.text = intent.getStringExtra("Valor")
 
@@ -119,6 +129,69 @@ class WebApi : AppCompatActivity(), CompletadoListener {
             }
 
         }
+
+        btjSon.setOnClickListener(){
+        // tratar objetos JSON simples
+            val respuesta = "{ \"personas\" : [ " +
+                    "{" +
+                    " \"nombre\" : \"Marcos\" ," +
+                    " \"pais\" : \"México\" ," +
+                    " \"estado\" : \"soltero\" ," +
+                    " \"experiencia\" : 5}," +
+
+                    "{" +
+                    " \"nombre\" : \"Agustín\" ," +
+                    " \"pais\" : \"España\" ," +
+                    " \"estado\" : \"casado\" ," +
+                    " \"experiencia\" : 16}" +
+                    " ]" +
+                    " }"
+            val json= JSONObject(respuesta)
+            val personas = json.getJSONArray("personas")
+            Log.d("JSON array", personas.toString())
+            for (i in 0 ..personas.length()-1){
+                val nombre = personas.getJSONObject(i).getString("nombre")
+                val pais =personas.getJSONObject(i).getString("pais")
+                val estado =personas.getJSONObject(i).getString("estado")
+                val experiencia =personas.getJSONObject(i).getInt("experiencia")
+
+                val persona= Persona(nombre,pais,estado,experiencia)
+                Log.d("individual JSON", persona.toString())
+                Log.d("individual JSON", persona.nombre)
+
+                listaPersonas.add(Persona(nombre,pais,estado,experiencia))
+
+            }
+
+            Log.d("JSON Class count", listaPersonas.count().toString())
+            Log.d("JSON Class", listaPersonas[1].nombre)
+
+        }
+
+        btgson.setOnClickListener(){
+            // tratar objetos JSON con libreria gson
+            val respuesta = "{ \"personas\" : [ " +
+                    "{" +
+                    " \"nombre\" : \"Marcos\" ," +
+                    " \"pais\" : \"México\" ," +
+                    " \"estado\" : \"soltero\" ," +
+                    " \"experiencia\" : 5}," +
+
+                    "{" +
+                    " \"nombre\" : \"Agustín\" ," +
+                    " \"pais\" : \"España\" ," +
+                    " \"estado\" : \"casado\" ," +
+                    " \"experiencia\" : 16}" +
+                    " ]" +
+                    " }"
+            val gson = Gson()
+            val result = gson.fromJson(respuesta, Personas::class.java)
+            Log.d("gson Class count", result.personas.count().toString())
+            Log.d("gson Class", result.personas.toString())
+            Log.d("gson Class", result.personas[1].nombre)
+
+        }
+
     }
 
 

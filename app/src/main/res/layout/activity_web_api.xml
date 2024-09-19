@@ -77,8 +77,8 @@
     <Button
         android:id="@+id/btEndOkHttp"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="105dp"
-        android:layout_height="63dp"
+        android:layout_width="123dp"
+        android:layout_height="65dp"
         android:text="@string/okhttp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,5 +86,33 @@
         app:layout_constraintStart_toEndOf="@+id/btEndHttpAsinc"
         app:layout_constraintTop_toBottomOf="@+id/btEndNativo"
         app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/btjSon"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="105dp"
+        android:layout_height="63dp"
+        android:text="@string/json"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toEndOf="@+id/btEndOkHttp"
+        app:layout_constraintTop_toBottomOf="@+id/btEndVolley"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <Button
+        android:id="@+id/btgSon"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="105dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/gson"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btEndHttpAsinc"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

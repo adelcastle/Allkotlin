@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Clima">
+
+    <TextView
+        android:id="@+id/tvTituloClima"
+        android:layout_width="397dp"
+        android:layout_height="48sp"
+        android:text="@string/texto_ciudad"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGrados"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <TextView
+        android:id="@+id/tvGrados"
+        android:layout_width="235dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/texto_grados"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="48pt"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEstado"
+        android:layout_width="334dp"
+        android:layout_height="111dp"
+        android:text="@string/texto_estado"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="22pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloClima"
+        app:layout_constraintVertical_bias="0.112" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
