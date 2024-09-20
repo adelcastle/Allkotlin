@@ -12,4 +12,8 @@
     <string name="texto_grados">35°</string>
     <string name="texto_ciudad">Ciudad Mexico</string>
     <string name="texto_estado">Nublado</string>
+    <string name="control_listas">Control Listas</string>
+    <string name="pruebas_listas">Pruebas Listas</string>
+    <string name="listview">ListView</string>
+    <string name="listview_personal">ListView Personal</string>
 </resources>

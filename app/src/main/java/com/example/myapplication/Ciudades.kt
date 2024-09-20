@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,15 +29,27 @@ class Ciudades : AppCompatActivity() {
         btCiudadBerlin= findViewById(R.id.btCiudadBerlin)
 
         btCiudadMexico.setOnClickListener {
+
+
+            if(redDisponible(this) ==true){
             intent = Intent(this, Clima::class.java)
-            intent.putExtra("Ciudad","Ciudad de Mexico")
+            intent.putExtra("Ciudad","3530597")
             startActivity(intent)
+            }else{
+                Toast.makeText(this,"Red no disponible", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btCiudadBerlin.setOnClickListener {
-            intent = Intent(this, Clima::class.java)
-            intent.putExtra("Ciudad","Ciudad de Berlin")
-            startActivity(intent)
+
+            if(redDisponible(this) ==true) {
+                intent = Intent(this, Clima::class.java)
+                intent.putExtra("Ciudad", "2950159")
+                startActivity(intent)
+            }
+           else{
+                    Toast.makeText(this,"Red no disponible", Toast.LENGTH_SHORT).show()
+                }
         }
 
 

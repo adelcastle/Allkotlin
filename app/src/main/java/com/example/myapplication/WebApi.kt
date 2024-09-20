@@ -16,6 +16,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.myapplication.Clases.Ciudad
 import com.example.myapplication.Clases.CompletadoListener
 import com.example.myapplication.Clases.vNetwork
 import java.io.InputStream
@@ -227,6 +228,7 @@ class WebApi : AppCompatActivity(), CompletadoListener {
                 response ->
                 try {
                     Log.d("SolicitudVolley", response)
+
                 }catch (e:Exception){
                     Log.d("SolicitudVolley", "Error al procesar solicitud Volley")
                 }

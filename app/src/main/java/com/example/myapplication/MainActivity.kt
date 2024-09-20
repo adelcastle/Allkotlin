@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var btAPI: Button
     lateinit var btClima: Button
+    lateinit var btListas: Button
 
 
 
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun controles() {
         btAPI = findViewById(R.id.btAPI)
         btClima = findViewById(R.id.btClima)
+        btListas = findViewById(R.id.btLista)
 
     }
 
@@ -84,6 +86,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Valor","Explorar Clima-" + LocalDate.now() )
             startActivity(intent)
         }
+        btListas.setOnClickListener {
+            intent = Intent(this, Listas::class.java)
+            intent.putExtra("Valor","Listas-" + LocalDate.now() )
+            startActivity(intent)
+        }
+
+
 
     }
 
