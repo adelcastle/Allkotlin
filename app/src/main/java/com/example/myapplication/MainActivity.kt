@@ -13,6 +13,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.widget.Toast
+import androidx.lifecycle.Lifecycle
 
 
 fun redDisponible(context: Context): Boolean {
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var btAPI: Button
     lateinit var btClima: Button
     lateinit var btListas: Button
+    lateinit var btAppEvent: Button
+
+    var oncreate:String = "Iniciando"
 
 
 
@@ -55,6 +59,13 @@ class MainActivity : AppCompatActivity() {
 
         controles()
         eventos()
+       //  oncreate = "var Antes de EventoClic"
+       // Toast.makeText(this, oncreate, Toast.LENGTH_SHORT).show()
+        btAppEvent.setOnClickListener {
+            oncreate="var despues Evento Click"
+            Toast.makeText(this, oncreate, Toast.LENGTH_SHORT).show()
+
+        }
 
 
     }
@@ -63,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         btAPI = findViewById(R.id.btAPI)
         btClima = findViewById(R.id.btClima)
         btListas = findViewById(R.id.btLista)
+        btAppEvent = findViewById(R.id.btAppEvent)
 
     }
 
@@ -94,7 +106,45 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
     }
+    // Eventos de ciclo de vida y mantener valor variables al cambiar de pantalla
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putString("stado",oncreate)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        oncreate = savedInstanceState.getString("stado").toString()
+        Toast.makeText(this, oncreate, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "En Transición - onPause", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "Aplicativo oculto - OnStop", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "Aplicativo visible - onResume", Toast.LENGTH_SHORT).show()
+    }
+
+
+    //Ondestroyed se usa cuando android destruye la actividad
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "Aplicativo cerrado - onDestroy", Toast.LENGTH_SHORT).show()
+    }
+
 
 
 }

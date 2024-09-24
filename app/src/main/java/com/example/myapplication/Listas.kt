@@ -13,6 +13,8 @@ class Listas : AppCompatActivity() {
 
     lateinit var btListView: Button
     lateinit var btListViewPersonal: Button
+    lateinit var btGridView: Button
+    lateinit var btGridViewPersonal: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,8 @@ class Listas : AppCompatActivity() {
    fun controles(){
         btListView = findViewById(R.id.btListView)
         btListViewPersonal = findViewById(R.id.btListViewPersonal)
+       btGridView = findViewById(R.id.btGridView)
+       btGridViewPersonal = findViewById(R.id.btGridViewPersonal)
     }
 
     fun eventos(){
@@ -43,6 +47,18 @@ class Listas : AppCompatActivity() {
         btListViewPersonal.setOnClickListener {
             intent = Intent(this, ListViewPersonal::class.java)
             intent.putExtra("Valor","Listas Personalizadas-" + LocalDate.now() )
+            startActivity(intent)
+        }
+
+        btGridView.setOnClickListener {
+            intent = Intent(this, gridView::class.java)
+            intent.putExtra("Valor","Grid View-" + LocalDate.now() )
+            startActivity(intent)
+        }
+
+        btGridViewPersonal.setOnClickListener {
+            intent = Intent(this, gridViewPersonal::class.java)
+            intent.putExtra("Valor","Grid View Personalizada-" + LocalDate.now() )
             startActivity(intent)
         }
     }

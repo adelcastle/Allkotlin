@@ -51,5 +51,31 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTituloListas"
         app:layout_constraintVertical_bias="0.074" />
 
+    <Button
+        android:id="@+id/btGridView"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="157dp"
+        android:layout_height="67dp"
+        android:text="@string/gridview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btListView"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/btGridViewPersonal"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="157dp"
+        android:layout_height="67dp"
+        android:text="@string/gridviewpersonal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/btGridView"
+        app:layout_constraintTop_toBottomOf="@+id/btListViewPersonal"
+        app:layout_constraintVertical_bias="0.068" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

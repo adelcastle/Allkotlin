@@ -16,4 +16,7 @@
     <string name="pruebas_listas">Pruebas Listas</string>
     <string name="listview">ListView</string>
     <string name="listview_personal">ListView Personal</string>
+    <string name="gridview">GridView</string>
+    <string name="gridviewpersonal">gridviewPersonal</string>
+    <string name="grid_view">Grid View Personalizada</string>
 </resources>
