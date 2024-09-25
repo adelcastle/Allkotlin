@@ -13,6 +13,7 @@ class Ciudades : AppCompatActivity() {
 
     lateinit var btCiudadMexico: Button
     lateinit var btCiudadBerlin: Button
+    lateinit var btRegresar: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,12 @@ class Ciudades : AppCompatActivity() {
 
         btCiudadMexico = findViewById(R.id.btCiudadMexico)
         btCiudadBerlin= findViewById(R.id.btCiudadBerlin)
+        btRegresar = findViewById(R.id.btRegresar)
+
+        btRegresar.setOnClickListener {
+            finish()
+        }
+
 
         btCiudadMexico.setOnClickListener {
 
