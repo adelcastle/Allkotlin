@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btClima: Button
     lateinit var btListas: Button
     lateinit var btAppEvent: Button
-
+    lateinit var btToolBar: Button
     var oncreate:String = "Iniciando"
 
 
@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         btClima = findViewById(R.id.btClima)
         btListas = findViewById(R.id.btLista)
         btAppEvent = findViewById(R.id.btAppEvent)
+        btToolBar = findViewById(R.id.btToolBar)
 
     }
 
@@ -101,6 +102,12 @@ class MainActivity : AppCompatActivity() {
         btListas.setOnClickListener {
             intent = Intent(this, Listas::class.java)
             intent.putExtra("Valor","Listas-" + LocalDate.now() )
+            startActivity(intent)
+        }
+
+        btToolBar.setOnClickListener {
+            intent = Intent(this, activityToolBar::class.java)
+            intent.putExtra("Valor","Toolbar-" + LocalDate.now() )
             startActivity(intent)
         }
 
