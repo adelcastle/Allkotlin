@@ -5,9 +5,26 @@
 
 
     <item
+        android:id="@+id/barSearch"
+        android:icon="@drawable/ic_search_24"
+        android:title="Buscar"
+        android:fillColor="#00EE5F"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/item1"
+        android:fillColor="#00EE5F"
         android:icon="@drawable/fav"
         android:title="Item"
         android:tooltipText="Prueba de items"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/Compartir"
+        android:fillColor="#00EE5F"
+        android:icon="@drawable/share_32"
+        android:title="Compartir"
+        app:showAsAction="ifRoom"
+        tools:ignore="Instantiatable" />
+
 </menu>
